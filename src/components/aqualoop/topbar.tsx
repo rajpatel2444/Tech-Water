@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Moon, Sun, Bell, Gauge, Calendar, Clock } from "lucide-react";
+import { Moon, Sun, Bell, Waves, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useSimulation } from "@/hooks/use-simulation";
@@ -12,12 +12,12 @@ export function Topbar() {
     <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-border bg-background/80 px-4 py-3 backdrop-blur-xl">
       <div className="flex items-center gap-3 min-w-0">
         <span className="gradient-brand grid h-9 w-9 shrink-0 place-items-center rounded-xl shadow-[var(--shadow-glow)]">
-          <Gauge className="h-5 w-5 text-primary-foreground" />
+          <Waves className="h-5 w-5 text-primary-foreground" />
         </span>
         <div className="min-w-0">
-          <p className="truncate font-display text-base font-bold">AquaLoop</p>
+          <p className="truncate font-display text-base font-bold">HydroTrace</p>
           <p className="truncate text-xs text-muted-foreground">
-            Smart Water Today, Sustainable Tomorrow
+            Intelligent Leak Detection & Localization
           </p>
         </div>
       </div>
