@@ -1,22 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Trophy, Lightbulb, Target, Rocket, Award, Users, Github } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/launchverse")({
   head: () => ({
     meta: [
-      { title: "LaunchVerse Judges | AquaLoop" },
+      { title: "LaunchVerse Judges | HydroTrace" },
       {
         name: "description",
         content:
           "Information for LaunchVerse competition judges: project overview, team, innovation highlights, and technical details.",
       },
-      { property: "og:title", content: "LaunchVerse Judges | AquaLoop" },
+      { property: "og:title", content: "LaunchVerse Judges | HydroTrace" },
       {
         property: "og:description",
-        content: "AquaLoop - Smart water conservation dashboard for LaunchVerse competition.",
+        content: "HydroTrace - Smart water conservation dashboard for LaunchVerse competition.",
       },
     ],
   }),
@@ -28,13 +28,13 @@ function LaunchVersePage() {
     <PageShell>
       <PageHeader
         title="LaunchVerse Judges"
-        subtitle="Everything you need to evaluate AquaLoop for the competition."
+        subtitle="Everything you need to evaluate HydroTrace for the competition."
       />
 
       <section className="card-soft p-6">
         <h2 className="text-base font-semibold">Project Summary</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          <strong>AquaLoop</strong> is an intelligent IoT dashboard that monitors two independent
+          <strong>HydroTrace</strong> is an intelligent IoT dashboard that monitors two independent
           water loops — <strong>rainwater harvesting</strong> and{" "}
           <strong>reverse-osmosis reject recovery</strong> — with real-time telemetry, composite
           water-quality scoring (0–100), and explainable reuse recommendations. It runs as a fully

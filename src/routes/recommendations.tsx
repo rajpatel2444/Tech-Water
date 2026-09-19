@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { RecommendationCard } from "@/components/aqualoop/recommendation-card";
-import { ModeSwitcher } from "@/components/aqualoop/mode-switcher";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { RecommendationCard } from "@/components/hydrotrace/recommendation-card";
+import { ModeSwitcher } from "@/components/hydrotrace/mode-switcher";
 import { Badge } from "@/components/ui/badge";
 import { useSimulation } from "@/hooks/use-simulation";
 import { TANK_META, formatAgo } from "@/lib/simulation";
@@ -11,13 +11,13 @@ import { TANK_META, formatAgo } from "@/lib/simulation";
 export const Route = createFileRoute("/recommendations")({
   head: () => ({
     meta: [
-      { title: "AI Reuse Recommendations | AquaLoop" },
+      { title: "AI Reuse Recommendations | HydroTrace" },
       {
         name: "description",
         content:
-          "Timeline of AquaLoop reuse recommendations with confidence scores, reasoning, suggested actions and expected benefits.",
+          "Timeline of HydroTrace reuse recommendations with confidence scores, reasoning, suggested actions and expected benefits.",
       },
-      { property: "og:title", content: "AI Reuse Recommendations | AquaLoop" },
+      { property: "og:title", content: "AI Reuse Recommendations | HydroTrace" },
       {
         property: "og:description",
         content: "Explainable water reuse decisions with confidence and reasoning.",

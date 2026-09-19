@@ -5,10 +5,10 @@ import {
   BarChart3, CheckCircle2, XCircle, Target, Clock, Award,
   Percent, Hash, TrendingUp, ShieldCheck,
 } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { StatCard } from "@/components/aqualoop/stat-card";
-import { ChartCard, TrendBars } from "@/components/aqualoop/charts";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { StatCard } from "@/components/hydrotrace/stat-card";
+import { ChartCard, TrendBars } from "@/components/hydrotrace/charts";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { generateValidationSummary } from "@/lib/hydrotrace";

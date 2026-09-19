@@ -5,9 +5,9 @@ import {
   MapPin, Target, Filter, ChevronRight, Crosshair,
   ArrowDownRight, Layers, Cpu,
 } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { StatCard } from "@/components/aqualoop/stat-card";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { StatCard } from "@/components/hydrotrace/stat-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";

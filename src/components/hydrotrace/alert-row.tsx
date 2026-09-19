@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Info, AlertTriangle, OctagonAlert, Check } from "lucide-react";
-import type { AlertItem } from "@/types/aqualoop";
+import type { AlertItem } from "@/types/hydrotrace";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { formatAgo, TANK_META } from "@/lib/simulation";

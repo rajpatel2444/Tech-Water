@@ -1,23 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AnimatePresence } from "framer-motion";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { AlertRow } from "@/components/aqualoop/alert-row";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { AlertRow } from "@/components/hydrotrace/alert-row";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSimulation } from "@/hooks/use-simulation";
-import type { AlertSeverity } from "@/types/aqualoop";
+import type { AlertSeverity } from "@/types/hydrotrace";
 
 export const Route = createFileRoute("/alerts")({
   head: () => ({
     meta: [
-      { title: "System Alerts | AquaLoop" },
+      { title: "System Alerts | HydroTrace" },
       {
         name: "description",
         content:
-          "Active AquaLoop alerts for leaks, high TDS, low water level, offline sensors and tank capacity events.",
+          "Active HydroTrace alerts for leaks, high TDS, low water level, offline sensors and tank capacity events.",
       },
-      { property: "og:title", content: "System Alerts | AquaLoop" },
+      { property: "og:title", content: "System Alerts | HydroTrace" },
       {
         property: "og:description",
         content: "Info, warning and critical alerts across both water loops.",

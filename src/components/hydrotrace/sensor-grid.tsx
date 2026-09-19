@@ -10,7 +10,7 @@ import {
   BatteryMedium,
   Wifi,
 } from "lucide-react";
-import type { TankState } from "@/types/aqualoop";
+import type { TankState } from "@/types/hydrotrace";
 import { RANGES } from "@/lib/simulation";
 import { cn } from "@/lib/utils";
 

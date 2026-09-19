@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { FileDown } from "lucide-react";
 import { toast } from "sonner";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
@@ -12,16 +12,16 @@ import { Progress } from "@/components/ui/progress";
 export const Route = createFileRoute("/maintenance")({
   head: () => ({
     meta: [
-      { title: "Maintenance Schedule | AquaLoop" },
+      { title: "Maintenance Schedule | HydroTrace" },
       {
         name: "description",
         content:
-          "Sensor calibration checklist, cleaning schedule, filter replacement and tank/pump inspection tracking for AquaLoop.",
+          "Sensor calibration checklist, cleaning schedule, filter replacement and tank/pump inspection tracking for HydroTrace.",
       },
-      { property: "og:title", content: "Maintenance Schedule | AquaLoop" },
+      { property: "og:title", content: "Maintenance Schedule | HydroTrace" },
       {
         property: "og:description",
-        content: "Keep both AquaLoop water loops serviced with a guided checklist.",
+        content: "Keep both HydroTrace water loops serviced with a guided checklist.",
       },
     ],
   }),

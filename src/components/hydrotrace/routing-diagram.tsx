@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { CloudRain, Recycle, Sprout, Toilet, Waves, Brush, PauseCircle } from "lucide-react";
 import { useSimulation } from "@/hooks/use-simulation";
-import type { Destination, TankId } from "@/types/aqualoop";
+import type { Destination, TankId } from "@/types/hydrotrace";
 import { cn } from "@/lib/utils";
 
 const destinationIcons: Record<Destination, typeof Sprout> = {

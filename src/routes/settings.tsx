@@ -1,27 +1,27 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { toast } from "sonner";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
-import { ModeSwitcher } from "@/components/aqualoop/mode-switcher";
+import { ModeSwitcher } from "@/components/hydrotrace/mode-switcher";
 import { useSimulation } from "@/hooks/use-simulation";
 
 export const Route = createFileRoute("/settings")({
   head: () => ({
     meta: [
-      { title: "Simulation Settings | AquaLoop" },
+      { title: "Simulation Settings | HydroTrace" },
       {
         name: "description",
         content:
-          "Control AquaLoop demo behaviour: theme, simulation speed, random failure injection, alerts and reset.",
+          "Control HydroTrace demo behaviour: theme, simulation speed, random failure injection, alerts and reset.",
       },
-      { property: "og:title", content: "Simulation Settings | AquaLoop" },
+      { property: "og:title", content: "Simulation Settings | HydroTrace" },
       {
         property: "og:description",
-        content: "Tune the AquaLoop prototype simulation for your demo.",
+        content: "Tune the HydroTrace prototype simulation for your demo.",
       },
     ],
   }),

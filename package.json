@@ -1,5 +1,5 @@
 {
-  "name": "aqualoop",
+  "name": "hydrotrace",
   "version": "1.0.0",
   "description": "Smart water management dashboard that monitors rainwater and RO reject loops with IoT telemetry, water-quality scoring and reuse recommendations.",
   "private": true,

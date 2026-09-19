@@ -5,10 +5,10 @@ import {
   Activity, AlertTriangle, CheckCircle2, Radio, TrendingDown,
   TrendingUp, Zap, Shield, Eye, Timer,
 } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { StatCard } from "@/components/aqualoop/stat-card";
-import { ChartCard, TrendLines, TrendArea } from "@/components/aqualoop/charts";
+import { PageShell } from "@/components/HydroTrace/page-shell";
+import { PageHeader } from "@/components/HydroTrace/page-header";
+import { StatCard } from "@/components/HydroTrace/stat-card";
+import { ChartCard, TrendLines, TrendArea } from "@/components/HydroTrace/charts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";

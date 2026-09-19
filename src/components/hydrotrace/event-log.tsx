@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Activity, Sparkles, Route, Bell, Cpu, Droplets } from "lucide-react";
 import { useSimulation } from "@/hooks/use-simulation";
 import { formatAgo } from "@/lib/simulation";
-import type { EventType } from "@/types/aqualoop";
+import type { EventType } from "@/types/hydrotrace";
 
 const icons: Record<EventType, typeof Activity> = {
   recommendation: Sparkles,

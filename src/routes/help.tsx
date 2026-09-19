@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { CloudRain, Cpu, Brain, Route as RouteIcon, ArrowRight, Github } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
 import {
   Accordion,
   AccordionContent,
@@ -13,13 +13,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/help")({
   head: () => ({
     meta: [
-      { title: "How AquaLoop Works | Help" },
+      { title: "How HydroTrace Works | Help" },
       {
         name: "description",
         content:
-          "Understand the AquaLoop architecture, the three operating modes, how recommendations are generated, and FAQs.",
+          "Understand the HydroTrace architecture, the three operating modes, how recommendations are generated, and FAQs.",
       },
-      { property: "og:title", content: "How AquaLoop Works | Help" },
+      { property: "og:title", content: "How HydroTrace Works | Help" },
       {
         property: "og:description",
         content: "Architecture, operating modes and recommendation logic explained.",
@@ -32,7 +32,7 @@ export const Route = createFileRoute("/help")({
 const faqs = [
   {
     q: "Can the two water sources ever mix?",
-    a: "No. Rainwater and RO reject water run through physically separate tanks, pipes, sensors and valves. AquaLoop models them as two isolated loops with independent analytics and recommendations.",
+    a: "No. Rainwater and RO reject water run through physically separate tanks, pipes, sensors and valves. HydroTrace models them as two isolated loops with independent analytics and recommendations.",
   },
   {
     q: "Is this connected to real hardware?",
@@ -63,7 +63,7 @@ function HelpPage() {
       <section className="card-soft p-6">
         <h2 className="text-base font-semibold">Project Overview</h2>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          AquaLoop is an intelligent water management system that recovers two waste streams most
+          HydroTrace is an intelligent water management system that recovers two waste streams most
           buildings throw away: harvested rainwater and reverse-osmosis reject water. Each stream is
           measured continuously, scored for quality and matched to the best reuse destination —
           irrigation, toilet flushing, floor cleaning or groundwater recharge — without ever mixing

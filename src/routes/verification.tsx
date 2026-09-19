@@ -5,8 +5,8 @@ import {
   CheckCircle2, XCircle, Trophy, Eye, EyeOff, ArrowRight,
   Sparkles, Target, Clock, Zap, Award,
 } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";

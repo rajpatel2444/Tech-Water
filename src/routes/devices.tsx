@@ -2,8 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Cpu, RefreshCw, Download, Lightbulb, Wifi, BatteryMedium, Clock } from "lucide-react";
 import { toast } from "sonner";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -13,16 +13,16 @@ import { TANK_META, formatAgo } from "@/lib/simulation";
 export const Route = createFileRoute("/devices")({
   head: () => ({
     meta: [
-      { title: "ESP32 Devices | AquaLoop" },
+      { title: "ESP32 Devices | HydroTrace" },
       {
         name: "description",
         content:
-          "Manage the two AquaLoop ESP32 sensor nodes: firmware, WiFi strength, battery, sync status and remote actions.",
+          "Manage the two HydroTrace ESP32 sensor nodes: firmware, WiFi strength, battery, sync status and remote actions.",
       },
-      { property: "og:title", content: "ESP32 Devices | AquaLoop" },
+      { property: "og:title", content: "ESP32 Devices | HydroTrace" },
       {
         property: "og:description",
-        content: "Device fleet view for the AquaLoop rainwater and RO reject sensor nodes.",
+        content: "Device fleet view for the HydroTrace rainwater and RO reject sensor nodes.",
       },
     ],
   }),

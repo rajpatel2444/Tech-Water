@@ -1,22 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { EventLog } from "@/components/aqualoop/event-log";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { EventLog } from "@/components/hydrotrace/event-log";
 import { useSimulation } from "@/hooks/use-simulation";
 
 export const Route = createFileRoute("/history")({
   head: () => ({
     meta: [
-      { title: "Event History | AquaLoop" },
+      { title: "Event History | HydroTrace" },
       {
         name: "description",
         content:
-          "Chronological AquaLoop event history: routing decisions, sensor updates, leaks and recommendation changes.",
+          "Chronological HydroTrace event history: routing decisions, sensor updates, leaks and recommendation changes.",
       },
-      { property: "og:title", content: "Event History | AquaLoop" },
+      { property: "og:title", content: "Event History | HydroTrace" },
       {
         property: "og:description",
-        content: "Full session timeline of AquaLoop system events.",
+        content: "Full session timeline of HydroTrace system events.",
       },
     ],
   }),

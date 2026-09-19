@@ -11,8 +11,8 @@ import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SimulationProvider } from "@/hooks/use-simulation";
-import { AppSidebar } from "@/components/aqualoop/app-sidebar";
-import { Topbar } from "@/components/aqualoop/topbar";
+import { AppSidebar } from "@/components/hydrotrace/app-sidebar";
+import { Topbar } from "@/components/hydrotrace/topbar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -78,14 +78,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "AquaLoop — Smart Water Today, Sustainable Tomorrow" },
+      { title: "HydroTrace — Smart Water Today, Sustainable Tomorrow" },
       {
         name: "description",
         content:
-          "AquaLoop is an intelligent IoT dashboard that monitors rainwater harvesting and RO reject recovery in two independent loops, scores water quality in real time and recommends the safest reuse destination.",
+          "HydroTrace is an intelligent IoT dashboard that monitors rainwater harvesting and RO reject recovery in two independent loops, scores water quality in real time and recommends the safest reuse destination.",
       },
-      { name: "author", content: "AquaLoop Team" },
-      { property: "og:title", content: "AquaLoop — Smart Water Today, Sustainable Tomorrow" },
+      { name: "author", content: "HydroTrace Team" },
+      { property: "og:title", content: "HydroTrace — Smart Water Today, Sustainable Tomorrow" },
       {
         property: "og:description",
         content:
@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/og-image.svg" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "AquaLoop — Smart Water Today, Sustainable Tomorrow" },
+      { name: "twitter:title", content: "HydroTrace — Smart Water Today, Sustainable Tomorrow" },
       {
         name: "twitter:description",
         content: "Smart water conservation with independent rainwater and RO reject loops.",
@@ -152,7 +152,7 @@ function RootComponent() {
                     rel="noopener noreferrer"
                     className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"
                   >
-                    AquaLoop
+                    HydroTrace
                   </a>{" "}
                   © 2026 | Made by{" "}
                   <a

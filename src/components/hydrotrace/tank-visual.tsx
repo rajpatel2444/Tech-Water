@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import type { TankId } from "@/types/aqualoop";
+import type { TankId } from "@/types/hydrotrace";
 
 export function TankVisual({
   tankId,

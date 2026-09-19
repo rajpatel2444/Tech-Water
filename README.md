@@ -1,6 +1,6 @@
 <div align="center">
 
-# AquaLoop
+# HydroTrace
 
 ### Smart Water Today, Sustainable Tomorrow
 
@@ -21,7 +21,7 @@
   <a href="https://eslint.org"><img src="https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white&style=for-the-badge" alt="ESLint"></a>
   <a href="https://prettier.io"><img src="https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=white&style=for-the-badge" alt="Prettier"></a>
   <a href="https://pages.cloudflare.com"><img src="https://img.shields.io/badge/Cloudflare_Pages-F38020?logo=cloudflare&logoColor=white&style=for-the-badge" alt="Cloudflare Pages"></a>
-  <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/Live_Demo-aqualoop.itzbyteglitch.qzz.io-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live Demo"></a>
+  <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/Live_Demo-hydrotrace.itzbyteglitch.qzz.io-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live Demo"></a>
   <a href="https://github.com/rajpatel2444/Tech-Water/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rajpatel2444/Tech-Water/ci.yml?style=for-the-badge&label=Build%20Status" alt="Build Status"></a>
   <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub-Open_Source-181717?logo=github&logoColor=white&style=for-the-badge" alt="GitHub"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License"></a>
@@ -354,7 +354,7 @@ npm run format    # Prettier --write
 
 ## Screenshots
 
-> Live preview: [aqualoop.itzbyteglitch.qzz.io](https://aqualoop.itzbyteglitch.qzz.io)
+> Live preview: [hydrotrace.itzbyteglitch.qzz.io](https://hydrotrace.itzbyteglitch.qzz.io)
 
 ### Dashboard
 ![Dashboard](docs/dashboard.png)
@@ -572,7 +572,7 @@ Types: `feat`, `fix`, `docs`, `refactor`, `perf`, `test`, `chore`, `build`, `ci`
 
 - TypeScript strict mode (no `any`, no unused locals/params)
 - Named exports, no default exports
-- Components in `components/aqualoop/` for domain, `components/ui/` for primitives
+- Components in `components/hydrotrace/` for domain, `components/ui/` for primitives
 - Hooks in `hooks/`, pure logic in `lib/`, types in `types/`
 - Run `npm run format` before committing
 
@@ -599,6 +599,6 @@ Inspiration and knowledge drawn from:
 
 **Built with care for a sustainable water future.**
 
-_AquaLoop — Smart Water Today, Sustainable Tomorrow_
+_HydroTrace — Smart Water Today, Sustainable Tomorrow_
 
 </div>

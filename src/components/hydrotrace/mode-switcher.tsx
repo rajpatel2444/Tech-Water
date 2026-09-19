@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Hand, Handshake, Bot } from "lucide-react";
 import { useSimulation } from "@/hooks/use-simulation";
-import type { OperatingMode } from "@/types/aqualoop";
+import type { OperatingMode } from "@/types/hydrotrace";
 import { cn } from "@/lib/utils";
 
 const modes: { id: OperatingMode; label: string; icon: typeof Hand; hint: string }[] = [

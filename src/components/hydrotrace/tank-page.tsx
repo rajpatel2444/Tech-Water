@@ -9,19 +9,19 @@ import {
   Brush,
   PauseCircle,
 } from "lucide-react";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { TankVisual } from "@/components/aqualoop/tank-visual";
-import { SensorGrid } from "@/components/aqualoop/sensor-grid";
-import { QualityRing } from "@/components/aqualoop/quality-ring";
-import { RecommendationCard } from "@/components/aqualoop/recommendation-card";
-import { ChartCard, TrendArea, TrendLines } from "@/components/aqualoop/charts";
-import { ModeSwitcher } from "@/components/aqualoop/mode-switcher";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { TankVisual } from "@/components/hydrotrace/tank-visual";
+import { SensorGrid } from "@/components/hydrotrace/sensor-grid";
+import { QualityRing } from "@/components/hydrotrace/quality-ring";
+import { RecommendationCard } from "@/components/hydrotrace/recommendation-card";
+import { ChartCard, TrendArea, TrendLines } from "@/components/hydrotrace/charts";
+import { ModeSwitcher } from "@/components/hydrotrace/mode-switcher";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { useSimulation } from "@/hooks/use-simulation";
 import { TANK_META, formatAgo } from "@/lib/simulation";
-import type { Destination, TankId } from "@/types/aqualoop";
+import type { Destination, TankId } from "@/types/hydrotrace";
 
 const destinations: { id: Destination; icon: typeof Sprout }[] = [
   { id: "Irrigation", icon: Sprout },

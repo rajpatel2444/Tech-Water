@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageShell } from "@/components/aqualoop/page-shell";
-import { PageHeader } from "@/components/aqualoop/page-header";
-import { ChartCard, TrendArea, TrendBars, TrendLines } from "@/components/aqualoop/charts";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { ChartCard, TrendArea, TrendBars, TrendLines } from "@/components/hydrotrace/charts";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useSimulation } from "@/hooks/use-simulation";
 import { dailyUsage, monthlyTrend, weeklyTrend } from "@/lib/simulation";
@@ -9,16 +9,16 @@ import { dailyUsage, monthlyTrend, weeklyTrend } from "@/lib/simulation";
 export const Route = createFileRoute("/analytics")({
   head: () => ({
     meta: [
-      { title: "Water Analytics & Trends | AquaLoop" },
+      { title: "Water Analytics & Trends | HydroTrace" },
       {
         name: "description",
         content:
           "Explore level, temperature, TDS, pH, flow and savings trends across daily, weekly and monthly windows.",
       },
-      { property: "og:title", content: "Water Analytics & Trends | AquaLoop" },
+      { property: "og:title", content: "Water Analytics & Trends | HydroTrace" },
       {
         property: "og:description",
-        content: "Daily, weekly and monthly water reuse analytics for both AquaLoop sources.",
+        content: "Daily, weekly and monthly water reuse analytics for both HydroTrace sources.",
       },
     ],
   }),

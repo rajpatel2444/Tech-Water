@@ -29,7 +29,7 @@ import type {
   TankState,
   WeatherState,
   DeviceInfo,
-} from "@/types/aqualoop";
+} from "@/types/hydrotrace";
 
 const TANK_IDS: TankId[] = ["rainwater", "roReject"];
 
@@ -78,7 +78,7 @@ function initDevices(): DeviceInfo[] {
     {
       id: "esp32-rw-01",
       tankId: "rainwater",
-      name: "AquaNode RW-01",
+      name: "HydroNode RW-01",
       firmware: "v2.4.1",
       lastSync: Date.now(),
       uptimeHours: 412,
@@ -86,7 +86,7 @@ function initDevices(): DeviceInfo[] {
     {
       id: "esp32-ro-02",
       tankId: "roReject",
-      name: "AquaNode RO-02",
+      name: "HydroNode RO-02",
       firmware: "v2.3.8",
       lastSync: Date.now(),
       uptimeHours: 297,

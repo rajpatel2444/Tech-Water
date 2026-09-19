@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Sparkles, CheckCircle2, AlertTriangle, Ban, ArrowRight } from "lucide-react";
-import type { Recommendation } from "@/types/aqualoop";
+import type { Recommendation } from "@/types/hydrotrace";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
