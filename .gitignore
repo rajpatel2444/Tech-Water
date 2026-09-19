@@ -62,10 +62,13 @@ coverage
 .wrangler/
 .dev.vars
 
-# Package lockfiles (optional - uncomment if you want to commit package-lock.json)
-# package-lock.json
+# Package lockfiles - INCLUDED for reproducible builds
+package-lock.json
 # pnpm-lock.yaml
 # yarn.lock
 
 # Vercel build outputs
 .vercel/
+
+# GitHub Pages - keep build output for deployment
+# .output/public/ is committed for GitHub Pages deployment
