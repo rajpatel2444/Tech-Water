@@ -12,15 +12,19 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AlertsRouteImport } from './routes/alerts'
 import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as DetectionRouteImport } from './routes/detection'
 import { Route as DevicesRouteImport } from './routes/devices'
 import { Route as HelpRouteImport } from './routes/help'
 import { Route as HistoryRouteImport } from './routes/history'
 import { Route as LaunchverseRouteImport } from './routes/launchverse'
+import { Route as LocalizationRouteImport } from './routes/localization'
 import { Route as MaintenanceRouteImport } from './routes/maintenance'
 import { Route as RainwaterRouteImport } from './routes/rainwater'
 import { Route as RecommendationsRouteImport } from './routes/recommendations'
 import { Route as RoRejectRouteImport } from './routes/ro-reject'
 import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as ValidationRouteImport } from './routes/validation'
+import { Route as VerificationRouteImport } from './routes/verification'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -35,6 +39,11 @@ const AlertsRoute = AlertsRouteImport.update({
 const AnalyticsRoute = AnalyticsRouteImport.update({
   id: '/analytics',
   path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DetectionRoute = DetectionRouteImport.update({
+  id: '/detection',
+  path: '/detection',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DevicesRoute = DevicesRouteImport.update({
@@ -55,6 +64,11 @@ const HistoryRoute = HistoryRouteImport.update({
 const LaunchverseRoute = LaunchverseRouteImport.update({
   id: '/launchverse',
   path: '/launchverse',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LocalizationRoute = LocalizationRouteImport.update({
+  id: '/localization',
+  path: '/localization',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MaintenanceRoute = MaintenanceRouteImport.update({
@@ -82,49 +96,71 @@ const SettingsRoute = SettingsRouteImport.update({
   path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ValidationRoute = ValidationRouteImport.update({
+  id: '/validation',
+  path: '/validation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationRoute = VerificationRouteImport.update({
+  id: '/verification',
+  path: '/verification',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
   '/analytics': typeof AnalyticsRoute
+  '/detection': typeof DetectionRoute
   '/devices': typeof DevicesRoute
   '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
   '/launchverse': typeof LaunchverseRoute
+  '/localization': typeof LocalizationRoute
   '/maintenance': typeof MaintenanceRoute
   '/rainwater': typeof RainwaterRoute
   '/recommendations': typeof RecommendationsRoute
   '/ro-reject': typeof RoRejectRoute
   '/settings': typeof SettingsRoute
+  '/validation': typeof ValidationRoute
+  '/verification': typeof VerificationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
   '/analytics': typeof AnalyticsRoute
+  '/detection': typeof DetectionRoute
   '/devices': typeof DevicesRoute
   '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
   '/launchverse': typeof LaunchverseRoute
+  '/localization': typeof LocalizationRoute
   '/maintenance': typeof MaintenanceRoute
   '/rainwater': typeof RainwaterRoute
   '/recommendations': typeof RecommendationsRoute
   '/ro-reject': typeof RoRejectRoute
   '/settings': typeof SettingsRoute
+  '/validation': typeof ValidationRoute
+  '/verification': typeof VerificationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/alerts': typeof AlertsRoute
   '/analytics': typeof AnalyticsRoute
+  '/detection': typeof DetectionRoute
   '/devices': typeof DevicesRoute
   '/help': typeof HelpRoute
   '/history': typeof HistoryRoute
   '/launchverse': typeof LaunchverseRoute
+  '/localization': typeof LocalizationRoute
   '/maintenance': typeof MaintenanceRoute
   '/rainwater': typeof RainwaterRoute
   '/recommendations': typeof RecommendationsRoute
   '/ro-reject': typeof RoRejectRoute
   '/settings': typeof SettingsRoute
+  '/validation': typeof ValidationRoute
+  '/verification': typeof VerificationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -132,58 +168,74 @@ export interface FileRouteTypes {
     | '/'
     | '/alerts'
     | '/analytics'
+    | '/detection'
     | '/devices'
     | '/help'
     | '/history'
     | '/launchverse'
+    | '/localization'
     | '/maintenance'
     | '/rainwater'
     | '/recommendations'
     | '/ro-reject'
     | '/settings'
+    | '/validation'
+    | '/verification'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/alerts'
     | '/analytics'
+    | '/detection'
     | '/devices'
     | '/help'
     | '/history'
     | '/launchverse'
+    | '/localization'
     | '/maintenance'
     | '/rainwater'
     | '/recommendations'
     | '/ro-reject'
     | '/settings'
+    | '/validation'
+    | '/verification'
   id:
     | '__root__'
     | '/'
     | '/alerts'
     | '/analytics'
+    | '/detection'
     | '/devices'
     | '/help'
     | '/history'
     | '/launchverse'
+    | '/localization'
     | '/maintenance'
     | '/rainwater'
     | '/recommendations'
     | '/ro-reject'
     | '/settings'
+    | '/validation'
+    | '/verification'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AlertsRoute: typeof AlertsRoute
   AnalyticsRoute: typeof AnalyticsRoute
+  DetectionRoute: typeof DetectionRoute
   DevicesRoute: typeof DevicesRoute
   HelpRoute: typeof HelpRoute
   HistoryRoute: typeof HistoryRoute
   LaunchverseRoute: typeof LaunchverseRoute
+  LocalizationRoute: typeof LocalizationRoute
   MaintenanceRoute: typeof MaintenanceRoute
   RainwaterRoute: typeof RainwaterRoute
   RecommendationsRoute: typeof RecommendationsRoute
   RoRejectRoute: typeof RoRejectRoute
   SettingsRoute: typeof SettingsRoute
+  ValidationRoute: typeof ValidationRoute
+  VerificationRoute: typeof VerificationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -207,6 +259,13 @@ declare module '@tanstack/react-router' {
       path: '/analytics'
       fullPath: '/analytics'
       preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/detection': {
+      id: '/detection'
+      path: '/detection'
+      fullPath: '/detection'
+      preLoaderRoute: typeof DetectionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/devices': {
@@ -235,6 +294,13 @@ declare module '@tanstack/react-router' {
       path: '/launchverse'
       fullPath: '/launchverse'
       preLoaderRoute: typeof LaunchverseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/localization': {
+      id: '/localization'
+      path: '/localization'
+      fullPath: '/localization'
+      preLoaderRoute: typeof LocalizationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/maintenance': {
@@ -272,6 +338,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/validation': {
+      id: '/validation'
+      path: '/validation'
+      fullPath: '/validation'
+      preLoaderRoute: typeof ValidationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification': {
+      id: '/verification'
+      path: '/verification'
+      fullPath: '/verification'
+      preLoaderRoute: typeof VerificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -279,15 +359,19 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AlertsRoute: AlertsRoute,
   AnalyticsRoute: AnalyticsRoute,
+  DetectionRoute: DetectionRoute,
   DevicesRoute: DevicesRoute,
   HelpRoute: HelpRoute,
   HistoryRoute: HistoryRoute,
   LaunchverseRoute: LaunchverseRoute,
+  LocalizationRoute: LocalizationRoute,
   MaintenanceRoute: MaintenanceRoute,
   RainwaterRoute: RainwaterRoute,
   RecommendationsRoute: RecommendationsRoute,
   RoRejectRoute: RoRejectRoute,
   SettingsRoute: SettingsRoute,
+  ValidationRoute: ValidationRoute,
+  VerificationRoute: VerificationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

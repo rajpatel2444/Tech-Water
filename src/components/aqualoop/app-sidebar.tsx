@@ -14,6 +14,10 @@ import {
   Droplets,
   Github,
   Trophy,
+  Activity,
+  MapPin,
+  CheckCircle2,
+  ShieldCheck,
 } from "lucide-react";
 import {
   Sidebar,
@@ -36,6 +40,13 @@ const monitoring = [
   { title: "Rainwater Tank", url: "/rainwater", icon: CloudRain },
   { title: "RO Reject Tank", url: "/ro-reject", icon: Recycle },
   { title: "Analytics", url: "/analytics", icon: BarChart3 },
+] as const;
+
+const hydrotrace = [
+  { title: "Leak Detection", url: "/detection", icon: Activity },
+  { title: "Localization", url: "/localization", icon: MapPin },
+  { title: "Verification", url: "/verification", icon: CheckCircle2 },
+  { title: "Validation", url: "/validation", icon: ShieldCheck },
 ] as const;
 
 const intelligence = [
@@ -91,6 +102,7 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" variant="inset">
       <SidebarContent>
         {renderGroup("Monitoring", monitoring)}
+        {renderGroup("HydroTrace", hydrotrace)}
         {renderGroup("Intelligence", intelligence)}
         {renderGroup("System", system)}
       </SidebarContent>
