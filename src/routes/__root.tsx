@@ -147,7 +147,7 @@ function RootComponent() {
               <footer className="border-t border-border bg-card/50 backdrop-blur-sm flex-shrink-0">
                 <div className="mx-auto max-w-full px-4 py-3 text-center text-xs text-muted-foreground">
                   <a
-                    href="https://github.com/itzbyteglitch/aqualoop"
+                    href="https://github.com/rajpatel2444/Tech-Water"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-semibold text-primary underline underline-offset-2 hover:text-primary/80 transition-colors"

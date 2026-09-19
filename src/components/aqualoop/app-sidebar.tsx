@@ -100,7 +100,7 @@ export function AppSidebar() {
             Prototype build · simulated telemetry only
           </p>
           <a
-            href="https://github.com/itzbyteglitch/AquaLoop"
+            href="https://github.com/rajpatel2444/Tech-Water"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-2 py-2 text-[11px] text-muted-foreground hover:text-primary transition-colors"

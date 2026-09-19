@@ -128,7 +128,7 @@ function LaunchVersePage() {
           </Button>
           <Button variant="outline" asChild>
             <a
-              href="https://github.com/itzbyteglitch/AquaLoop"
+              href="https://github.com/rajpatel2444/Tech-Water"
               target="_blank"
               rel="noopener noreferrer"
             >

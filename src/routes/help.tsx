@@ -158,7 +158,7 @@ function HelpPage() {
           <h2 className="text-base font-semibold">Report an Issue</h2>
           <Button asChild variant="outline" size="sm">
             <a
-              href="https://github.com/itzbyteglitch/AquaLoop/issues/new/choose"
+              href="https://github.com/rajpatel2444/Tech-Water/issues/new/choose"
               target="_blank"
               rel="noopener noreferrer"
             >

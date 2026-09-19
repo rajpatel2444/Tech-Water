@@ -22,7 +22,7 @@
   <a href="https://prettier.io"><img src="https://img.shields.io/badge/Prettier-F7B93E?logo=prettier&logoColor=white&style=for-the-badge" alt="Prettier"></a>
   <a href="https://pages.cloudflare.com"><img src="https://img.shields.io/badge/Cloudflare_Pages-F38020?logo=cloudflare&logoColor=white&style=for-the-badge" alt="Cloudflare Pages"></a>
   <a href="https://wildcards.itzbyteglitch.qzz.io"><img src="https://img.shields.io/badge/Live_Demo-aqualoop.itzbyteglitch.qzz.io-F38020?style=for-the-badge&logo=cloudflare&logoColor=white" alt="Live Demo"></a>
-  <a href="https://github.com/itzbyteglitch/AquaLoop/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/itzbyteglitch/AquaLoop/ci.yml?style=for-the-badge&label=Build%20Status" alt="Build Status"></a>
+  <a href="https://github.com/rajpatel2444/Tech-Water/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/rajpatel2444/Tech-Water/ci.yml?style=for-the-badge&label=Build%20Status" alt="Build Status"></a>
   <a href="https://github.com"><img src="https://img.shields.io/badge/GitHub-Open_Source-181717?logo=github&logoColor=white&style=for-the-badge" alt="GitHub"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License"></a>
   <img src="https://img.shields.io/badge/Status-Prototype-orange?style=for-the-badge" alt="Status: Prototype">
