@@ -73,7 +73,7 @@ function RecommendationsPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="font-medium">{rec.headline}</p>
                   <Badge variant="secondary" className="text-[10px]">
-                    {TANK_META[rec.tankId].short}
+                    {TANK_META[rec.tankId]?.short}
                   </Badge>
                   <Badge variant="outline" className="text-[10px]">
                     {rec.confidence}% confidence

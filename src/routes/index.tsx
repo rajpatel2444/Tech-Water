@@ -131,7 +131,7 @@ function TankCard({ tankId }: { tankId: TankId }) {
   return (
     <section className="card-soft flex flex-col p-5">
       <div className="flex items-center justify-between gap-2">
-        <h2 className="min-w-0 truncate text-base font-semibold">{TANK_META[tankId].name}</h2>
+        <h2 className="min-w-0 truncate text-base font-semibold">{TANK_META[tankId]?.name}</h2>
         <Badge
           variant={tank.status === "online" ? "secondary" : "destructive"}
           className="shrink-0 capitalize"
@@ -149,7 +149,7 @@ function TankCard({ tankId }: { tankId: TankId }) {
       </div>
       <Button asChild variant="outline" size="sm" className="mt-auto">
         <Link to={href}>
-          Open {TANK_META[tankId].short}
+          Open {TANK_META[tankId]?.short}
           <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
         </Link>
       </Button>

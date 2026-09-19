@@ -2,8 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import {
-  BarChart3, CheckCircle2, XCircle, Target, Clock, Award,
-  Percent, Hash, TrendingUp, ShieldCheck,
+  BarChart3,
+  CheckCircle2,
+  XCircle,
+  Target,
+  Clock,
+  Award,
+  Hash,
+  ShieldCheck,
 } from "lucide-react";
 import { PageShell } from "@/components/hydrotrace/page-shell";
 import { PageHeader } from "@/components/hydrotrace/page-header";
@@ -17,7 +23,11 @@ export const Route = createFileRoute("/validation")({
   head: () => ({
     meta: [
       { title: "Validation Results | HydroTrace" },
-      { name: "description", content: "Full evaluation of HydroTrace against the BattLeDIM benchmark — not one cherry-picked case." },
+      {
+        name: "description",
+        content:
+          "Full evaluation of HydroTrace against the BattLeDIM benchmark — not one cherry-picked case.",
+      },
     ],
   }),
   component: ValidationPage,
@@ -45,7 +55,12 @@ function ValidationPage() {
 
       {/* Hero Stats */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
-        <StatCard icon={Hash} label="Leaks Evaluated" value={summary.totalLeaks} hint="BattLeDIM 2019 events" />
+        <StatCard
+          icon={Hash}
+          label="Leaks Evaluated"
+          value={summary.totalLeaks}
+          hint="BattLeDIM 2019 events"
+        />
         <StatCard
           icon={CheckCircle2}
           label="Detected"
@@ -89,10 +104,30 @@ function ValidationPage() {
         </p>
         <div className="space-y-5">
           {[
-            { label: "Detection Rate", value: detectionRate, desc: `${summary.detected} of ${summary.totalLeaks} leaks detected`, color: "text-emerald-600" },
-            { label: "Correct Zone", value: zoneRate, desc: `${summary.correctZone} localized to correct network zone`, color: "text-blue-600" },
-            { label: "Top-3 Accuracy", value: top3Rate, desc: `${summary.correctTop3} actual pipes in top-3 candidates`, color: "text-amber-600" },
-            { label: "Top-1 Accuracy", value: top1Rate, desc: `${summary.correctTop1} exact pipe matches`, color: "text-purple-600" },
+            {
+              label: "Detection Rate",
+              value: detectionRate,
+              desc: `${summary.detected} of ${summary.totalLeaks} leaks detected`,
+              color: "text-emerald-600",
+            },
+            {
+              label: "Correct Zone",
+              value: zoneRate,
+              desc: `${summary.correctZone} localized to correct network zone`,
+              color: "text-blue-600",
+            },
+            {
+              label: "Top-3 Accuracy",
+              value: top3Rate,
+              desc: `${summary.correctTop3} actual pipes in top-3 candidates`,
+              color: "text-amber-600",
+            },
+            {
+              label: "Top-1 Accuracy",
+              value: top1Rate,
+              desc: `${summary.correctTop1} exact pipe matches`,
+              color: "text-purple-600",
+            },
           ].map((metric) => (
             <div key={metric.label}>
               <div className="flex items-center justify-between mb-1.5">
@@ -233,8 +268,8 @@ function ValidationPage() {
             </div>
             <p className="text-xs text-muted-foreground">
               We validate HydroTrace on an established research benchmark based on a real
-              water-distribution network. BattLeDIM was created specifically to objectively
-              compare leak detection and localization methods.
+              water-distribution network. BattLeDIM was created specifically to objectively compare
+              leak detection and localization methods.
             </p>
           </div>
           <div className="rounded-xl border p-4">
@@ -243,9 +278,9 @@ function ValidationPage() {
               <p className="text-sm font-semibold">Blind Evaluation Protocol</p>
             </div>
             <p className="text-xs text-muted-foreground">
-              All predictions were generated without access to the leak answer file.
-              The ground truth was only revealed after HydroTrace completed its analysis.
-              This ensures the evaluation is fair and unbiased.
+              All predictions were generated without access to the leak answer file. The ground
+              truth was only revealed after HydroTrace completed its analysis. This ensures the
+              evaluation is fair and unbiased.
             </p>
           </div>
         </div>

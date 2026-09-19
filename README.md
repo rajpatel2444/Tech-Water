@@ -357,27 +357,35 @@ npm run format    # Prettier --write
 > Live preview: [hydrotrace.itzbyteglitch.qzz.io](https://hydrotrace.itzbyteglitch.qzz.io)
 
 ### Dashboard
+
 ![Dashboard](docs/dashboard.png)
 
 ### Rainwater Tank
+
 ![Rainwater Tank](docs/rainwater.png)
 
 ### RO Reject Tank
+
 ![RO Reject Tank](docs/ro-reject.png)
 
 ### Analytics
+
 ![Analytics](docs/analytics.png)
 
 ### Recommendations
+
 ![Recommendations](docs/recommendations.png)
 
 ### Alerts
+
 ![Alerts](docs/alerts.png)
 
 ### Devices
+
 ![Devices](docs/devices.png)
 
 ### LaunchVerse
+
 ![LaunchVerse](docs/launchverse.png)
 
 ---

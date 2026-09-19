@@ -6,7 +6,7 @@ import type {
   TankId,
   TankState,
   WeatherState,
-} from "@/types/aqualoop";
+} from "@/types/hydrotrace";
 
 export const TANK_META: Record<TankId, { name: string; short: string; capacityLiters: number }> = {
   rainwater: { name: "Rainwater Tank", short: "Rainwater", capacityLiters: 5000 },

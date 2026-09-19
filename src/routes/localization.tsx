@@ -2,8 +2,14 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import {
-  MapPin, Target, Filter, ChevronRight, Crosshair,
-  ArrowDownRight, Layers, Cpu,
+  MapPin,
+  Target,
+  Filter,
+  ChevronRight,
+  Crosshair,
+  ArrowDownRight,
+  Layers,
+  Cpu,
 } from "lucide-react";
 import { PageShell } from "@/components/hydrotrace/page-shell";
 import { PageHeader } from "@/components/hydrotrace/page-header";
@@ -11,14 +17,18 @@ import { StatCard } from "@/components/hydrotrace/stat-card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
-import { generateNetworkTopology, generateLeakEvents, type CandidatePipe } from "@/lib/hydrotrace";
+
+import { generateNetworkTopology, generateLeakEvents } from "@/lib/hydrotrace";
 
 export const Route = createFileRoute("/localization")({
   head: () => ({
     meta: [
       { title: "Leak Localization | HydroTrace" },
-      { name: "description", content: "Brain 2 — Narrow 900+ pipes to top candidates using topology + hydraulic fingerprints." },
+      {
+        name: "description",
+        content:
+          "Brain 2 — Narrow 900+ pipes to top candidates using topology + hydraulic fingerprints.",
+      },
     ],
   }),
   component: LocalizationPage,
@@ -36,18 +46,14 @@ function LocalizationPage() {
 
   const highlightedNodes = useMemo(() => {
     return nodes.map((n) => {
-      const dist = Math.sqrt(
-        (n.x - leakZoneCenter.x) ** 2 + (n.y - leakZoneCenter.y) ** 2,
-      );
+      const dist = Math.sqrt((n.x - leakZoneCenter.x) ** 2 + (n.y - leakZoneCenter.y) ** 2);
       const inZone = dist < leakZoneRadius;
       return { ...n, anomaly: inZone ? Math.max(0, 1 - dist / leakZoneRadius) : 0 };
     });
   }, [nodes]);
 
   const highlightedPipes = useMemo(() => {
-    const zoneNodeIds = new Set(
-      highlightedNodes.filter((n) => n.anomaly > 0.3).map((n) => n.id),
-    );
+    const zoneNodeIds = new Set(highlightedNodes.filter((n) => n.anomaly > 0.3).map((n) => n.id));
     return pipes.map((p) => {
       const inZone = zoneNodeIds.has(p.from) || zoneNodeIds.has(p.to);
       const isLeak = p.id === event.topCandidates[0]?.pipeId;
@@ -84,7 +90,12 @@ function LocalizationPage() {
 
       {/* Funnel Stats */}
       <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <StatCard icon={Layers} label="Total Pipes" value={pipes.length} hint="Full L-Town network" />
+        <StatCard
+          icon={Layers}
+          label="Total Pipes"
+          value={pipes.length}
+          hint="Full L-Town network"
+        />
         <StatCard
           icon={Filter}
           label="Candidate Zone"
@@ -104,7 +115,9 @@ function LocalizationPage() {
           label="Leak Area"
           value={event.area}
           hint={`Severity: ${event.severity}`}
-          tone={event.severity === "critical" ? "bad" : event.severity === "high" ? "warn" : "default"}
+          tone={
+            event.severity === "critical" ? "bad" : event.severity === "high" ? "warn" : "default"
+          }
         />
       </div>
 
@@ -118,9 +131,24 @@ function LocalizationPage() {
         <h3 className="text-base font-semibold mb-5">Localization Funnel</h3>
         <div className="flex items-center justify-center gap-2 flex-wrap">
           {[
-            { label: "All Pipes", count: pipes.length, color: "bg-muted", text: "text-muted-foreground" },
-            { label: "Anomalous Region", count: suspectCount, color: "bg-amber-500/15", text: "text-amber-600" },
-            { label: "Fingerprint Candidates", count: event.topCandidates.length, color: "bg-blue-500/15", text: "text-blue-600" },
+            {
+              label: "All Pipes",
+              count: pipes.length,
+              color: "bg-muted",
+              text: "text-muted-foreground",
+            },
+            {
+              label: "Anomalous Region",
+              count: suspectCount,
+              color: "bg-amber-500/15",
+              text: "text-amber-600",
+            },
+            {
+              label: "Fingerprint Candidates",
+              count: event.topCandidates.length,
+              color: "bg-blue-500/15",
+              text: "text-blue-600",
+            },
             { label: "Top Match", count: 1, color: "bg-emerald-500/15", text: "text-emerald-600" },
           ].map((stage, i) => (
             <div key={stage.label} className="flex items-center gap-2">
@@ -174,7 +202,13 @@ function LocalizationPage() {
             {/* Background grid */}
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--color-border)" strokeWidth="0.5" opacity="0.4" />
+                <path
+                  d="M 40 0 L 0 0 0 40"
+                  fill="none"
+                  stroke="var(--color-border)"
+                  strokeWidth="0.5"
+                  opacity="0.4"
+                />
               </pattern>
               <radialGradient id="zoneGlow" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stopColor="#ef4444" stopOpacity="0.15" />
@@ -310,9 +344,7 @@ function LocalizationPage() {
               <div
                 key={c.pipeId}
                 className={`flex items-center gap-3 rounded-xl border p-3 transition-colors ${
-                  i === 0
-                    ? "bg-emerald-500/8 border-emerald-500/30"
-                    : "bg-card border-border"
+                  i === 0 ? "bg-emerald-500/8 border-emerald-500/30" : "bg-card border-border"
                 }`}
               >
                 <div
@@ -331,7 +363,9 @@ function LocalizationPage() {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
                     <p className="font-mono font-semibold text-sm">{c.pipeId}</p>
-                    <Badge variant="secondary" className="text-[10px]">{c.zone}</Badge>
+                    <Badge variant="secondary" className="text-[10px]">
+                      {c.zone}
+                    </Badge>
                   </div>
                   <div className="mt-1.5">
                     <Progress value={c.matchScore * 100} className="h-2" />
@@ -392,9 +426,10 @@ function LocalizationPage() {
           </div>
           <div className="mt-4 rounded-xl bg-primary/5 border border-primary/20 p-3">
             <p className="text-xs text-muted-foreground">
-              <strong className="text-foreground">Method:</strong> For each candidate pipe, WNTR simulates
-              what pressure readings would look like if that pipe leaked. The candidate whose simulated
-              fingerprint most closely matches the observed event gets the highest score.
+              <strong className="text-foreground">Method:</strong> For each candidate pipe, WNTR
+              simulates what pressure readings would look like if that pipe leaked. The candidate
+              whose simulated fingerprint most closely matches the observed event gets the highest
+              score.
             </p>
           </div>
         </motion.section>

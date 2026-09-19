@@ -62,7 +62,7 @@ function DevicesPage() {
                 <div className="min-w-0">
                   <h2 className="truncate text-base font-semibold">{device.name}</h2>
                   <p className="truncate text-xs text-muted-foreground">
-                    {TANK_META[device.tankId].name} · {device.id}
+                    {TANK_META[device.tankId]?.name} · {device.id}
                   </p>
                 </div>
                 <Badge

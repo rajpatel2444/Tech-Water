@@ -5,11 +5,39 @@
 
 // ─── Sensor Names (mimicking BattLeDIM-style IDs) ────────────────────────────
 export const PRESSURE_SENSORS = [
-  "n1", "n4", "n31", "n54", "n105", "n114", "n163", "n188",
-  "n229", "n288", "n296", "n332", "n342", "n410", "n415",
-  "n429", "n458", "n469", "n495", "n506", "n516", "n519",
-  "n549", "n613", "n636", "n644", "n679", "n722", "n726",
-  "n740", "n752", "n769", "n31a",
+  "n1",
+  "n4",
+  "n31",
+  "n54",
+  "n105",
+  "n114",
+  "n163",
+  "n188",
+  "n229",
+  "n288",
+  "n296",
+  "n332",
+  "n342",
+  "n410",
+  "n415",
+  "n429",
+  "n458",
+  "n469",
+  "n495",
+  "n506",
+  "n516",
+  "n519",
+  "n549",
+  "n613",
+  "n636",
+  "n644",
+  "n679",
+  "n722",
+  "n726",
+  "n740",
+  "n752",
+  "n769",
+  "n31a",
 ] as const;
 
 export const FLOW_SENSORS = ["PUMP_1", "PUMP_2", "V_PU4"] as const;
@@ -91,10 +119,7 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 const pick = <T>(arr: readonly T[]): T => arr[Math.floor(Math.random() * arr.length)]!;
 
 // ─── Generate fake pressure timeline ─────────────────────────────────────────
-export function generatePressureTimeline(
-  steps: number,
-  leakStartStep: number,
-): TimeStep[] {
+export function generatePressureTimeline(steps: number, leakStartStep: number): TimeStep[] {
   const basePressures: Record<string, number> = {};
   PRESSURE_SENSORS.forEach((s) => {
     basePressures[s] = rand(38, 56);
@@ -351,7 +376,15 @@ export function generateValidationSummary(): {
   delays.sort((a, b) => a - b);
   const medianDelay = delays.length > 0 ? delays[Math.floor(delays.length / 2)]! : 0;
 
-  return { totalLeaks: total, detected, correctZone, correctTop1, correctTop3, medianDelay, results };
+  return {
+    totalLeaks: total,
+    detected,
+    correctZone,
+    correctTop1,
+    correctTop3,
+    medianDelay,
+    results,
+  };
 }
 
 // ─── Live sensor data for the streaming demo ─────────────────────────────────
@@ -366,10 +399,7 @@ export interface LiveSensorState {
   persistenceCount: number;
 }
 
-export function generateLiveSensorSnapshot(
-  step: number,
-  leakActive: boolean,
-): LiveSensorState {
+export function generateLiveSensorSnapshot(step: number, leakActive: boolean): LiveSensorState {
   const mins = step * 5;
   const h = 8 + Math.floor(mins / 60);
   const m = mins % 60;

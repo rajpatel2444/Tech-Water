@@ -2,13 +2,21 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Activity, AlertTriangle, CheckCircle2, Radio, TrendingDown,
-  TrendingUp, Zap, Shield, Eye, Timer,
+  Activity,
+  AlertTriangle,
+  CheckCircle2,
+  Radio,
+  TrendingDown,
+  TrendingUp,
+  Zap,
+  Shield,
+  Eye,
+  Timer,
 } from "lucide-react";
-import { PageShell } from "@/components/HydroTrace/page-shell";
-import { PageHeader } from "@/components/HydroTrace/page-header";
-import { StatCard } from "@/components/HydroTrace/stat-card";
-import { ChartCard, TrendLines, TrendArea } from "@/components/HydroTrace/charts";
+import { PageShell } from "@/components/hydrotrace/page-shell";
+import { PageHeader } from "@/components/hydrotrace/page-header";
+import { StatCard } from "@/components/hydrotrace/stat-card";
+import { ChartCard, TrendLines, TrendArea } from "@/components/hydrotrace/charts";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
@@ -23,14 +31,16 @@ export const Route = createFileRoute("/detection")({
   head: () => ({
     meta: [
       { title: "Leak Detection | HydroTrace" },
-      { name: "description", content: "Brain 1 — Real-time anomaly detection across pressure and flow sensors." },
+      {
+        name: "description",
+        content: "Brain 1 — Real-time anomaly detection across pressure and flow sensors.",
+      },
     ],
   }),
   component: DetectionPage,
 });
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
-const rand = (min: number, max: number) => min + Math.random() * (max - min);
 
 function statusColor(s: string) {
   if (s === "leak_detected") return "text-red-500";
@@ -59,7 +69,13 @@ function DetectionPage() {
   const [isRunning, setIsRunning] = useState(true);
   const [leakActive, setLeakActive] = useState(false);
   const [historyData, setHistoryData] = useState<
-    { label: string; probability: number; anomalies: number; avgPressure: number; totalFlow: number }[]
+    {
+      label: string;
+      probability: number;
+      anomalies: number;
+      avgPressure: number;
+      totalFlow: number;
+    }[]
   >([]);
 
   const snapshot: LiveSensorState = useMemo(
@@ -90,14 +106,9 @@ function DetectionPage() {
         probability: Math.round(snapshot.leakProbability * 100),
         anomalies: snapshot.anomalyCount,
         avgPressure: Number(
-          (
-            snapshot.sensors.reduce((s, r) => s + r.value, 0) /
-            snapshot.sensors.length
-          ).toFixed(1),
+          (snapshot.sensors.reduce((s, r) => s + r.value, 0) / snapshot.sensors.length).toFixed(1),
         ),
-        totalFlow: Number(
-          snapshot.flowSensors.reduce((s, r) => s + r.value, 0).toFixed(1),
-        ),
+        totalFlow: Number(snapshot.flowSensors.reduce((s, r) => s + r.value, 0).toFixed(1)),
       },
     ]);
   }, [snapshot]);
@@ -171,7 +182,9 @@ function DetectionPage() {
             </p>
           </div>
           <div className="text-right shrink-0">
-            <p className="text-xs text-muted-foreground uppercase tracking-wide">Leak Probability</p>
+            <p className="text-xs text-muted-foreground uppercase tracking-wide">
+              Leak Probability
+            </p>
             <p className={`text-3xl font-bold font-display ${statusColor(snapshot.status)}`}>
               {probPct}%
             </p>
@@ -200,7 +213,13 @@ function DetectionPage() {
           label="Persistence Count"
           value={snapshot.persistenceCount}
           hint="Consecutive anomalous intervals"
-          tone={snapshot.persistenceCount > 4 ? "bad" : snapshot.persistenceCount > 0 ? "warn" : "default"}
+          tone={
+            snapshot.persistenceCount > 4
+              ? "bad"
+              : snapshot.persistenceCount > 0
+                ? "warn"
+                : "default"
+          }
         />
         <StatCard
           icon={Activity}
@@ -225,10 +244,7 @@ function DetectionPage() {
           </Badge>
         </div>
         <div className="relative">
-          <Progress
-            value={probPct}
-            className="h-4 rounded-full"
-          />
+          <Progress value={probPct} className="h-4 rounded-full" />
           <div className="flex justify-between mt-2 text-xs text-muted-foreground">
             <span>0% — Normal</span>
             <span>50% — Suspicious</span>
@@ -240,23 +256,19 @@ function DetectionPage() {
       {/* Charts Row */}
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
         <ChartCard title="Average Pressure (mH₂O)" description="Across all 33 pressure sensors">
-          <TrendArea
-            data={historyData}
-            dataKey="avgPressure"
-            color="var(--color-chart-1)"
-          />
+          <TrendArea data={historyData} dataKey="avgPressure" color="var(--color-chart-1)" />
         </ChartCard>
         <ChartCard title="Total Flow (L/s)" description="Aggregate from 3 flow sensors" delay={0.1}>
-          <TrendArea
-            data={historyData}
-            dataKey="totalFlow"
-            color="var(--color-chart-2)"
-          />
+          <TrendArea data={historyData} dataKey="totalFlow" color="var(--color-chart-2)" />
         </ChartCard>
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
-        <ChartCard title="Leak Probability Timeline" description="Algorithm confidence over time" delay={0.15}>
+        <ChartCard
+          title="Leak Probability Timeline"
+          description="Algorithm confidence over time"
+          delay={0.15}
+        >
           <TrendArea
             data={historyData}
             dataKey="probability"
@@ -264,12 +276,14 @@ function DetectionPage() {
             unit="%"
           />
         </ChartCard>
-        <ChartCard title="Anomaly Count" description="Number of sensors exceeding threshold" delay={0.2}>
+        <ChartCard
+          title="Anomaly Count"
+          description="Number of sensors exceeding threshold"
+          delay={0.2}
+        >
           <TrendLines
             data={historyData}
-            series={[
-              { key: "anomalies", name: "Anomalous Sensors", color: "#f59e0b" },
-            ]}
+            series={[{ key: "anomalies", name: "Anomalous Sensors", color: "#f59e0b" }]}
           />
         </ChartCard>
       </div>
@@ -296,27 +310,33 @@ function DetectionPage() {
               key={s.id}
               animate={
                 s.isAnomalous
-                  ? { borderColor: ["rgba(239,68,68,0.3)", "rgba(239,68,68,0.8)", "rgba(239,68,68,0.3)"] }
+                  ? {
+                      borderColor: [
+                        "rgba(239,68,68,0.3)",
+                        "rgba(239,68,68,0.8)",
+                        "rgba(239,68,68,0.3)",
+                      ],
+                    }
                   : {}
               }
               transition={s.isAnomalous ? { repeat: Infinity, duration: 1.5 } : {}}
               className={`rounded-xl border p-2.5 text-center transition-colors ${
-                s.isAnomalous
-                  ? "bg-red-500/10 border-red-500/40"
-                  : "bg-card border-border"
+                s.isAnomalous ? "bg-red-500/10 border-red-500/40" : "bg-card border-border"
               }`}
             >
               <p className="text-[10px] font-mono text-muted-foreground truncate">{s.id}</p>
-              <p className={`text-sm font-bold font-display ${s.isAnomalous ? "text-red-500" : ""}`}>
+              <p
+                className={`text-sm font-bold font-display ${s.isAnomalous ? "text-red-500" : ""}`}
+              >
                 {s.value}
               </p>
-              <p className="text-[9px] text-muted-foreground">
-                exp {s.expected}
-              </p>
+              <p className="text-[9px] text-muted-foreground">exp {s.expected}</p>
               {s.isAnomalous && (
                 <div className="flex items-center justify-center gap-0.5 mt-0.5">
                   <TrendingDown className="h-2.5 w-2.5 text-red-500" />
-                  <span className="text-[9px] text-red-500 font-medium">-{s.deviation.toFixed(1)}</span>
+                  <span className="text-[9px] text-red-500 font-medium">
+                    -{s.deviation.toFixed(1)}
+                  </span>
                 </div>
               )}
             </motion.div>
@@ -337,9 +357,7 @@ function DetectionPage() {
             <div
               key={f.id}
               className={`rounded-xl border p-4 ${
-                f.isAnomalous
-                  ? "bg-red-500/10 border-red-500/30"
-                  : "bg-card border-border"
+                f.isAnomalous ? "bg-red-500/10 border-red-500/30" : "bg-card border-border"
               }`}
             >
               <div className="flex items-center justify-between">
@@ -350,7 +368,9 @@ function DetectionPage() {
                   <CheckCircle2 className="h-4 w-4 text-emerald-500" />
                 )}
               </div>
-              <p className={`text-2xl font-bold font-display mt-2 ${f.isAnomalous ? "text-red-500" : ""}`}>
+              <p
+                className={`text-2xl font-bold font-display mt-2 ${f.isAnomalous ? "text-red-500" : ""}`}
+              >
                 {f.value} <span className="text-sm font-normal text-muted-foreground">L/s</span>
               </p>
               <div className="flex justify-between mt-1 text-xs text-muted-foreground">
@@ -374,11 +394,36 @@ function DetectionPage() {
         <h3 className="text-base font-semibold mb-3">Detection Algorithm</h3>
         <div className="grid sm:grid-cols-5 gap-3">
           {[
-            { step: "1", label: "Expected Behaviour", desc: "Historical baseline per time-of-day", active: true },
-            { step: "2", label: "Actual Readings", desc: "Live SCADA sensor values", active: step > 0 },
-            { step: "3", label: "Residual Analysis", desc: "Compute deviation from expected", active: snapshot.anomalyCount > 0 },
-            { step: "4", label: "Persistence Check", desc: "Anomaly must persist ≥4 intervals", active: snapshot.persistenceCount >= 2 },
-            { step: "5", label: "Leak Probability", desc: "Confidence score generated", active: snapshot.status === "leak_detected" },
+            {
+              step: "1",
+              label: "Expected Behaviour",
+              desc: "Historical baseline per time-of-day",
+              active: true,
+            },
+            {
+              step: "2",
+              label: "Actual Readings",
+              desc: "Live SCADA sensor values",
+              active: step > 0,
+            },
+            {
+              step: "3",
+              label: "Residual Analysis",
+              desc: "Compute deviation from expected",
+              active: snapshot.anomalyCount > 0,
+            },
+            {
+              step: "4",
+              label: "Persistence Check",
+              desc: "Anomaly must persist ≥4 intervals",
+              active: snapshot.persistenceCount >= 2,
+            },
+            {
+              step: "5",
+              label: "Leak Probability",
+              desc: "Confidence score generated",
+              active: snapshot.status === "leak_detected",
+            },
           ].map((s) => (
             <div
               key={s.step}

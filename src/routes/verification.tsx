@@ -1,23 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  CheckCircle2, XCircle, Trophy, Eye, EyeOff, ArrowRight,
-  Sparkles, Target, Clock, Zap, Award,
-} from "lucide-react";
+import { CheckCircle2, XCircle, Trophy, Eye, EyeOff, Sparkles, Award } from "lucide-react";
 import { PageShell } from "@/components/hydrotrace/page-shell";
 import { PageHeader } from "@/components/hydrotrace/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Progress } from "@/components/ui/progress";
+
 import { generateLeakEvents } from "@/lib/hydrotrace";
 
 export const Route = createFileRoute("/verification")({
   head: () => ({
     meta: [
       { title: "Verification | HydroTrace" },
-      { name: "description", content: "Brain 3 — Compare HydroTrace predictions against known ground truth." },
+      {
+        name: "description",
+        content: "Brain 3 — Compare HydroTrace predictions against known ground truth.",
+      },
     ],
   }),
   component: VerificationPage,
@@ -83,13 +82,17 @@ function VerificationPage() {
             </div>
             <div>
               <h3 className="text-lg font-bold">HydroTrace Prediction</h3>
-              <p className="text-xs text-muted-foreground">Generated without accessing answer file</p>
+              <p className="text-xs text-muted-foreground">
+                Generated without accessing answer file
+              </p>
             </div>
           </div>
 
           <div className="space-y-4">
             <div className="rounded-xl bg-blue-500/5 border border-blue-500/20 p-4">
-              <p className="text-xs text-muted-foreground uppercase tracking-wide">Predicted Leak Pipe</p>
+              <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                Predicted Leak Pipe
+              </p>
               <p className="text-3xl font-bold font-display text-blue-600 mt-1">
                 {event.topCandidates[0]?.pipeId}
               </p>
@@ -106,9 +109,7 @@ function VerificationPage() {
                 >
                   <div
                     className={`h-7 w-7 rounded-full grid place-items-center text-xs font-bold ${
-                      i === 0
-                        ? "bg-blue-500 text-white"
-                        : "bg-muted text-muted-foreground"
+                      i === 0 ? "bg-blue-500 text-white" : "bg-muted text-muted-foreground"
                     }`}
                   >
                     {i + 1}
@@ -154,10 +155,14 @@ function VerificationPage() {
             }`}
           />
           <div className="flex items-center gap-2 mb-5">
-            <div className={`h-10 w-10 rounded-xl grid place-items-center ${
-              revealed ? "bg-emerald-500/15" : "bg-muted"
-            }`}>
-              <Trophy className={`h-5 w-5 ${revealed ? "text-emerald-500" : "text-muted-foreground"}`} />
+            <div
+              className={`h-10 w-10 rounded-xl grid place-items-center ${
+                revealed ? "bg-emerald-500/15" : "bg-muted"
+              }`}
+            >
+              <Trophy
+                className={`h-5 w-5 ${revealed ? "text-emerald-500" : "text-muted-foreground"}`}
+              />
             </div>
             <div>
               <h3 className="text-lg font-bold">Ground Truth</h3>
@@ -174,17 +179,23 @@ function VerificationPage() {
                 exit={{ opacity: 0 }}
                 className="space-y-4"
               >
-                <div className={`rounded-xl p-4 border ${
-                  isMatch
-                    ? "bg-emerald-500/8 border-emerald-500/30"
-                    : isTop3
-                      ? "bg-amber-500/8 border-amber-500/30"
-                      : "bg-red-500/8 border-red-500/30"
-                }`}>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wide">Actual Leak Pipe</p>
-                  <p className={`text-3xl font-bold font-display mt-1 ${
-                    isMatch ? "text-emerald-600" : isTop3 ? "text-amber-600" : "text-red-500"
-                  }`}>
+                <div
+                  className={`rounded-xl p-4 border ${
+                    isMatch
+                      ? "bg-emerald-500/8 border-emerald-500/30"
+                      : isTop3
+                        ? "bg-amber-500/8 border-amber-500/30"
+                        : "bg-red-500/8 border-red-500/30"
+                  }`}
+                >
+                  <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                    Actual Leak Pipe
+                  </p>
+                  <p
+                    className={`text-3xl font-bold font-display mt-1 ${
+                      isMatch ? "text-emerald-600" : isTop3 ? "text-amber-600" : "text-red-500"
+                    }`}
+                  >
                     {event.actualPipe}
                   </p>
                 </div>
@@ -271,8 +282,8 @@ function VerificationPage() {
                   Ground truth is hidden
                 </p>
                 <p className="text-sm text-muted-foreground mt-1 max-w-xs">
-                  HydroTrace generated its prediction without reading the leak answer file.
-                  Click "Reveal Ground Truth" to see if the prediction was correct.
+                  HydroTrace generated its prediction without reading the leak answer file. Click
+                  "Reveal Ground Truth" to see if the prediction was correct.
                 </p>
               </motion.div>
             )}
@@ -317,7 +328,9 @@ function VerificationPage() {
               },
             ].map((item) => (
               <div key={item.label} className="rounded-xl border p-4 text-center">
-                <p className="text-xs text-muted-foreground uppercase tracking-wide">{item.label}</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-wide">
+                  {item.label}
+                </p>
                 <p className={`text-xl font-bold font-display mt-1 ${item.color}`}>{item.value}</p>
                 <p className="text-xs text-muted-foreground mt-0.5">{item.sub}</p>
               </div>
