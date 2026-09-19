@@ -12,9 +12,7 @@
     "start": "node .output/server/index.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write .",
-    "deploy": "npm run build && gh-pages -d .output/public -u 'github-actions[bot]>'",
-    "deploy:github": "npm run build && git add -f .output/public && git commit -m 'build: add production build output' && git push"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

@@ -15,6 +15,10 @@ export default defineConfig({
           specifiers: ["server-only"],
         },
       },
+      prerender: {
+        routes: ["/"],
+        crawlLinks: true,
+      },
     }),
     react(),
     tailwindcss(),

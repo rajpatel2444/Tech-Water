@@ -1,1 +1,0 @@
-import{l as e}from"./proxy-BT-g_2rM.js";import{t}from"./tank-page-slisFZpm.js";var n=e(),r=()=>(0,n.jsx)(t,{tankId:`roReject`});export{r as component};
